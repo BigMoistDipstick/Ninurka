@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
-{
+{ 
     Camera cam;                         //declares cam var as camera (used throughout the script)
     public Transform target;            //declares target var as transform (used in conjunction with camera to function)
     public Vector3 offset;              //declares offset var as vector3 (position) (used to configure default camera position)
@@ -13,7 +13,7 @@ public class CameraController : MonoBehaviour
     private float currentZoom = 10f;    //declares currentZoom as float (used to know how close the camera is to player)
     public float zoomSpeed = 7f;        //declares zoomSpeed var as float (used to change the speed of zoom)
     public float minZoom = 3f;          //declares minZoom var as float (used to clamp the closest value of zoom)
-    public float maxZoom = 15f;         //declares maxZoom var as float (used to clamp the furthest value of zoom)
+    public float maxZoom = 30f;         //declares maxZoom var as float (used to clamp the furthest value of zoom)
 
     //YAW (horizontal camera rotation)
     private float currentYaw = 0f;      //declares currentYaw var as float (used to keep the current value of the yaw)
