@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
         {
             agent.SetDestination(target.position);  //use navmeshagent to walk towards the target position
             FaceTarget();                           //call facetarget function (looks at the target)
+            Debug.Log("CLICKED");
         }
 
         if (agent.remainingDistance <= agent.stoppingDistance + 0.1f)

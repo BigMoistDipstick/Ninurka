@@ -30,11 +30,11 @@ public class PlayerStamina : MonoBehaviour
                     //indicator.colors
                 }
             }
-            //else
-            //{
-            //    isActivated = false;
-            //    movement.PlayerWalk();
-            //}
+            else
+            {
+                isActivated = false;
+                movement.PlayerWalk();
+            }
         }
 
         if (stamina <= 0)
@@ -61,7 +61,10 @@ public class PlayerStamina : MonoBehaviour
 
     public void StaminaRecharge()
     {
+        if (stamina < 100f)
+        {
         stamina += 0.005f;
+        }
         //Debug.Log("Stamina: " + Mathf.Round(stamina));
     }
 }
