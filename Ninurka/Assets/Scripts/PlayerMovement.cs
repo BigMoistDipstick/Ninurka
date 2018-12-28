@@ -8,14 +8,15 @@ public class PlayerMovement : MonoBehaviour
 {
     NavMeshAgent agent;         //declare agent var as navmeshagent
     public Transform target;    //declare target var as transform (used to know where the player must walk/interact)
-    bool isMoving = false;
     PlayerStamina stamina;
     public float runSpeed = 8f;
     public float walkSpeed = 3.5f;
+    DevMode setting;
 
     void Start ()
     {
         agent = GetComponent<NavMeshAgent>();   //connect agent var to navmeshagent component in unity
+        setting.DefaultNavMesh();
 	}
 
     void Update()
@@ -24,24 +25,13 @@ public class PlayerMovement : MonoBehaviour
         {
             agent.SetDestination(target.position);  //use navmeshagent to walk towards the target position
             FaceTarget();                           //call facetarget function (looks at the target)
-            Debug.Log("CLICKED");
-        }
-
-        if (agent.remainingDistance <= agent.stoppingDistance + 0.1f)
-        {
-            isMoving = false;
-            Debug.Log("isMoving = false");
-            if (!isMoving)
-            {
-                stamina.StaminaRecharge();
-            }
+            Debug.Log("INTERACTABLE CLICKED");
         }
     }
 
     public void MoveToPoint (Vector3 point)             //create movetopoint function with point parameter
     {
         agent.SetDestination(point);                    //use navmeshagent to set the destination of the player to the point parameter?
-        isMoving = true;
         Debug.Log("isMoving = true");
     }
 

@@ -27,7 +27,6 @@ public class PlayerController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 1000, movementMask))                 //if the ray hits, parameters (ray, raycasthit, range, mask)
             {
-                Debug.Log("TEST");
                 movement.MoveToPoint(hit.point);                    //calls movetopoint function from playermovement script (moves player towards the point that was clicked) (converts hit var to point argument???)
                 RemoveFocus();                                      //call RemoveFocus function (removes focused object from focus var)
             }
